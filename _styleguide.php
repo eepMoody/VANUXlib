@@ -1,23 +1,11 @@
 <!DOCTYPE html><html lang="en-gb">
 
-<head>
-	<title>Style Guide - Barebones</title>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-	<link rel="stylesheet" href="_css/core.css" type="text/css"/>
-</head>
-
-<body>
-	<main role="main">
-		<div class="container">
-			<header>
-				<nav role="navigation" class="breadcrumb-nav">
-					<a href="../">Barebones</a> /
-				</nav><!--/.breadcrumb-nav-->
-				<h1>Style Guide</h1>
-				<p class="lede">Basic markup and typographic styles</p>
-			</header>
+<?php
+	$page_title = "Style Guide";
+	$page_desc = "Basic markup and typographic styles";
+	
+	@include('_includes/header-include.html');
+?>
 
 			<h2>Sections <a href="#">Linked</a></h2>
 			<p>The main page header of this guide is an <code>h1</code> element. Any header elements may include links, as depicted in the example.</p>
@@ -370,13 +358,4 @@ p q r s t u v w x y z { | } ~</samp></pre>
 					</tbody>
 				</table>
 			</div>
-		</div><!--/container-->
-	</main><!--@main-->
-
-	<footer role="contentinfo">
-		<div class="container">
-			<p><small>Copyright &#169; 2013 <a href="http://paulrobertlloyd.com">Paul Robert Lloyd</a>. Code covered by the <a rel="license" href="http://paulrobertlloyd.mit-license.org/">MIT license</a>.</small></p>
-		</div><!--/container-->
-	</footer><!--/@contentinfo-->
-</body>
-</html>
+<?php @include('_includes/footer-include.html'); ?>
