@@ -1,0 +1,255 @@
+// Please make sure your mixin doesn't already exist in Bourbon. Many of below sourced from Bootstrap.
+
+@mixin box-shadow() {
+	box-shadow: 0 0 10px rgba(0,0,0,.15);
+}
+
+@mixin button-size($padding-vertical, $padding-horizontal, $line-height) {
+	line-height: $line-height;
+	padding: $padding-vertical $padding-horizontal;
+}
+
+@mixin calc-grid($index, $class, $type) {
+	@if $type == width {
+		.col-#{$class}-#{$index} {
+			width: percentage(($index / $grid-columns));
+		}
+	}
+	@if $type == push {
+		.col-#{$class}-push-#{$index} {
+			left: percentage(($index / $grid-columns));
+		}
+	}
+	@if $type == pull {
+		.col-#{$class}-pull-#{$index} {
+			right: percentage(($index / $grid-columns));
+		}
+	}
+	@if $type == offset {
+		.col-#{$class}-offset-#{$index} {
+			margin-left: percentage(($index / $grid-columns));
+		}
+	}
+}
+
+@mixin center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin container-fixed() {
+	@include clearfix;	
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: $grid-gutter-width / 2;
+	padding-right: $grid-gutter-width / 2;
+}
+
+@mixin input-size($input-height, $font-size) {
+	font-size: font-percentage($font-size);	
+	height: $input-height;
+}
+
+@mixin label-variant($color) {
+	background-color: $color;
+	&[href] {
+		&:hover,
+		&:focus {
+			background-color: tint($color, 10%);
+		}
+	}
+}
+
+@mixin make-grid-columns() {
+	$list: '';
+	@for $i from 1 to $grid-columns {
+		$list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}, #{$list}";
+	}
+	$i: $grid-columns;
+	$list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+	#{$list} {
+		min-height: 1px;
+		padding-left: $grid-gutter-width / 2;
+		padding-right: $grid-gutter-width / 2;
+		position: relative;		
+	}
+}
+
+@mixin make-grid-columns-float($class) {
+	$list: '';
+	@for $i from 1 to $grid-columns {
+		$list: ".col-#{$class}-#{$i}, #{$list}";
+	}
+	$i: $grid-columns;
+	$list: "#{$list}, .col-#{$class}-#{$i}";
+	#{$list} {
+		float: left;
+	}
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	@include clearfix;	
+	margin-left: $gutter / -2;
+	margin-right: $gutter / -2;
+}
+
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+	float: left;
+	min-height: 1px;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+	position: relative;	
+	width: percentage(($columns / $grid-columns));
+}
+
+@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
+	min-height: 1px;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+	position: relative;	
+	@media (min-width: $screen-sm-min) {
+		float: left;
+		width: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-sm-column-offset($columns) {
+	@media (min-width: $screen-sm-min) {
+		margin-left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-sm-column-push($columns) {
+	@media (min-width: $screen-sm-min) {
+		left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-sm-column-pull($columns) {
+	@media (min-width: $screen-sm-min) {
+		right: percentage(($columns / $grid-columns));
+	}
+}
+
+@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+	float: left;
+	min-height: 1px;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+	position: relative;
+	width: percentage(($columns / $grid-columns));
+	// @media (min-width: $screen-md-min) {
+	// 	
+	//	
+	// }
+}
+@mixin make-md-column-offset($columns) {
+	@media (min-width: $screen-md-min) {
+		margin-left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-md-column-push($columns) {
+	@media (min-width: $screen-md) {
+		left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-md-column-pull($columns) {
+	@media (min-width: $screen-md-min) {
+		right: percentage(($columns / $grid-columns));
+	}
+}
+
+@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+	min-height: 1px;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+	position: relative;	
+	@media (min-width: $screen-lg-min) {
+		float: left;
+		width: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-lg-column-offset($columns) {
+	@media (min-width: $screen-lg-min) {
+		margin-left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-lg-column-push($columns) {
+	@media (min-width: $screen-lg-min) {
+		left: percentage(($columns / $grid-columns));
+	}
+}
+@mixin make-lg-column-pull($columns) {
+	@media (min-width: $screen-lg-min) {
+		right: percentage(($columns / $grid-columns));
+	}
+}
+
+@mixin make-grid($columns, $class, $type) {
+	@for $i from 1 through $columns {
+		@include calc-grid($i, $class, $type);
+	}
+}
+
+@mixin opacity($opacity) {
+	filter: alpha(opacity=($opacity*100));
+	opacity: $opacity;
+}
+
+@mixin set-heading($target-font-size){
+	color: $heading-color;
+	font-size: font-percentage($target-font-size);
+	font-weight: $heading-font-weight;
+	margin: 0;
+}
+
+@mixin tab-focus() {
+	outline: 5px auto $border-color-focus;
+	outline-offset: -2px;
+}
+
+@mixin table-row-variant($state, $background, $text-color: inherit, $hover: false) {
+	.table {
+		& > thead, & > tbody, & > tfoot {
+			& > tr{
+				&.#{$state} > td, &.#{$state} > th,
+				& > td.#{$state}, & > th.#{$state} {
+					background-color: $background;
+					color: $text-color;
+				}
+			}
+		}
+	}
+	@if $hover == true {
+		.table{
+			& > tbody{
+				& > tr{
+					&.#{$state}:hover > td,
+					& > td.#{$state}:hover {
+						background-color: shade($background, 5%);
+					}
+				}
+			}
+		}
+	}
+	@else {
+		.table{
+			& > tbody{
+				& > tr{
+					&.#{$state}:hover > td,
+					& > td.#{$state}:hover {
+						background-color: $background;
+					}
+				}
+			}
+		}	
+	}
+}
+
+@mixin text-overflow() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin text-shadow() {
+	text-shadow: 1px 1px 0 rgba(0,0,0,.15);
+}

@@ -1,0 +1,178 @@
+// Text & Links  =============================================================
+
+$text-color: $gray-dark;
+$text-color-light: $white;
+
+$link-color: $theme-dark;
+$link-color-hover: shade($link-color, 25%);
+
+// Components ================================================================
+
+$component-active-bg: $theme-primary;
+$component-active-color: $text-color-light;
+$component-offset-horizontal: 180px;
+
+// Font Families =============================================================
+
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-alternate: Calibri, Segoe, 'Segoe UI', Optima, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font-family-base: $font-family-sans-serif;
+
+// Font Sizes ================================================================
+
+$font-size-base: 12px;
+$font-size-larger: floor($font-size-base * 1.2);
+$font-size-smaller: ceil($font-size-base * 0.8);
+$font-size-h1: floor($font-size-base * 2.0);
+$font-size-h2: floor($font-size-base * 1.8);
+$font-size-h3: floor($font-size-base * 1.6);
+$font-size-h4: floor($font-size-base * 1.4);
+$font-size-h5: $font-size-larger;
+$font-size-h6: $font-size-base;
+
+// Line Height ===============================================================
+
+$line-height-px: 18px; // http://drewish.com/tools/vertical-rhythm/
+$line-height-em: em($line-height-px, $font-size-base);
+$line-height-larger: 1.2;
+$line-height-smaller: normal;
+
+// Headings ==================================================================
+
+$heading-color: inherit;
+$heading-font-family: $font-family-alternate;
+$heading-font-weight: 400;
+
+// Icons =====================================================================
+
+$icon-font-path: "/style/assets/fonts/";
+$icon-font-name: "glyphicons-halflings-regular";
+
+// Breakpoints ===============================================================
+
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+// Grid Columns, Gutters, & Containers =======================================
+
+$grid-columns: 16;
+$grid-gutter-width: 20px;
+$grid-float-breakpoint: $screen-sm-min;
+
+$container-sm: ((720px + $grid-gutter-width));
+$container-md: ((940px + $grid-gutter-width));
+$container-lg: ((1140px + $grid-gutter-width));
+
+// Margins & Padding =========================================================
+
+$margin-base: $grid-gutter-width;
+$margin-half: $margin-base / 2;
+
+$padding-base-vertical: 3px;
+$padding-base-horizontal: 6px;
+$padding-large-vertical: $padding-base-vertical;
+$padding-large-horizontal: $padding-base-horizontal;
+$padding-small-vertical: $padding-base-vertical;
+$padding-small-horizontal: $padding-base-horizontal;
+
+// Borders ===================================================================
+
+$border-color: $gray-light;
+$border-color-light: $gray-lighter;
+$border-color-dark: $gray;
+$border-color-focus: $theme-warning;
+$border-radius-base: 3px;
+$border-radius-large: 6px;
+$border-radius-small: 3px;
+
+// Tables ====================================================================
+
+$table-cell-padding: 4px;
+$table-bg: $white;
+$table-bg-accent: $gray-lightest;
+$table-bg-hover: shade($gray-lighter, 5%);
+$table-border-color: $border-color;
+
+// List Groups ===============================================================
+
+$list-group-bg: $white;
+$list-group-border: $border-color;
+$list-group-border-radius: $border-radius-base;
+$list-group-hover-bg: $gray-lightest;
+$list-group-active-color: $component-active-color;
+$list-group-active-bg: $component-active-bg;
+$list-group-active-border: $list-group-active-bg;
+$list-group-link-color: $gray;
+$list-group-link-heading-color: $text-color;
+
+// Buttons ===================================================================
+
+$btn-gradient-light: $white;
+$btn-gradient-dark: $gray-lightest;
+$btn-font-weight: normal;
+$btn-default-color: $text-color;
+$btn-border-default: $border-color;
+$btn-border-hover: shade($border-color, 10%);
+$btn-padding-vertical: $padding-base-vertical;
+$btn-padding-horizontal: 20px;
+
+// Form Inputs ===============================================================
+
+$input-bg: $white;
+$input-bg-disabled: $gray-lighter;
+$input-color: $text-color;
+$input-color-placeholder: $gray-light;
+$input-border: $border-color;
+$input-border-hover: shade($input-border, 25%);
+$input-border-radius: $border-radius-base;
+$input-color-placeholder: $gray-light;
+$input-height-base: ($line-height-px + ($padding-base-vertical * 2) + 2);
+$input-height-larger: (($line-height-px * 1.2) + ($padding-large-vertical * 2) + 2);
+$input-height-smaller: (($line-height-px * 0.8) + ($padding-small-vertical * 2) + 2);
+
+$legend-color: $gray-dark;
+$legend-border-color: $border-color-dark;
+
+// Labels ====================================================================
+
+$label-default-bg: $gray-light;
+$label-primary-bg: $theme-primary;
+$label-success-bg: $theme-success;
+$label-info-bg: $theme-info;
+$label-warning-bg: $theme-warning;
+$label-danger-bg: $theme-danger;
+$label-color: $white;
+$label-link-hover-color: $white;
+
+// Navigation ================================================================
+
+$nav-link-padding: 5px 15px;
+$nav-link-hover-bg: $gray-lighter;
+$nav-disabled-link-color: $gray-light;
+$nav-disabled-link-hover-color: $gray-light;
+$nav-open-link-hover-color: $white;
+$nav-open-caret-border-color: $white;
+$nav-tabs-bg: $gray;
+$nav-tabs-bg-hover: $gray-light;
+$nav-tabs-active-bg: $white;
+$nav-pills-border-radius: $border-radius-base;
+$nav-pills-active-link-hover-bg: $component-active-bg;
+$nav-pills-active-link-hover-color: $component-active-color;
+
+// Panels ====================================================================
+
+$panel-bg: $white;
+$panel-border: $border-color-light;
+$panel-border-radius: $border-radius-base;
+$panel-color: $gray-dark;
+
+// Miscellaneous =============================================================
+
+$hr-border: $border-color;

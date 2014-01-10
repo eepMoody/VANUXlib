@@ -1,0 +1,78 @@
+#wrapper {
+	background: $content-bg;
+	@include border-bottom-radius($border-radius-base);
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+	position: relative;
+	z-index: 1;
+}
+
+#branding {
+	background: url('http://demo.me.dev.local:83/Images/NewBanner/DEMO/DEMO_TopHeaderbkgd.gif') repeat-x bottom left transparent;
+	@include clearfix;
+	padding-top: 28px; // for #quick-nav
+	position: relative;
+	h1{
+		background: url('http://demo.me.dev.local:83/Images/NewBanner/DEMO/DEMO_Header1.gif') no-repeat top left transparent;
+		display: block;
+		float: left;
+		position: relative;
+		@include size(398px 75px);
+		text-indent: -999em;
+		&:after{
+			background: url('http://demo.me.dev.local:83/Images/NewBanner/DEMO/DEMO_Header2.gif?220') no-repeat top left transparent;
+			content: '';
+			left: 100%;
+			position: absolute;
+			@include size(321px 75px);
+			top: 0;
+		}
+		a{
+			display: block;
+			@include size(100%);
+		}
+	}
+}
+
+#main-nav {
+	bottom: 0;
+	right: 0;
+	position: absolute;
+}
+
+#sub-nav {
+	background: $white;
+	border-bottom: 1px solid $border-color;
+	@include clearfix;
+	padding: 5px;
+	.menu-icons{
+		line-height: 23px; // gross, but match the breadcrumbs
+	}
+}
+
+#quick-nav {
+	color: $text-color-light;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	a {
+		color: inherit;
+	}
+	nav {
+		@include clearfix;
+		padding: 5px;
+	}
+}
+
+#content {
+	@include clearfix;
+	padding: $grid-gutter-width;
+}
+
+#copyright {
+	color: $text-color-light;
+	margin: $margin-base 0;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+}

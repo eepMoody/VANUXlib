@@ -1,0 +1,24 @@
+.pin-pad{
+	td{
+		border: 1px solid $border-color;
+	}
+	.pin-cell{
+		font-size: font-percentage(48px);
+		line-height: calc-line-height(48px);
+		padding: 5px;
+		.letter{
+			display: inline-block;
+			font-size: font-percentage(24px, 48px);
+			line-height: 1;
+			margin-left: 5px;
+		}
+	}
+}
+
+.van-pin {
+	.WizardTableDetailsInnerTable {
+		td {
+			padding: $table-cell-padding;
+		}
+	}
+}

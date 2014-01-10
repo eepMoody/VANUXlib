@@ -1,0 +1,116 @@
+// These selectors are very specific to override the WebResource styles
+
+div.RadComboBox {	
+	color: $input-color;
+	font-family: $font-family-base;
+	font-size: font-percentage($font-size-base);
+	height: $input-height-base;	
+	line-height: $line-height-em;
+	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+	vertical-align: middle;
+	white-space: normal;
+	table {
+		background-color: $input-bg;
+		border: 1px solid $input-border !important;
+		border-collapse: separate !important;
+		border-radius: $input-border-radius;	
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		width: auto !important;
+		&.rcbFocused {
+			background-color: $input-bg-disabled;
+			@include tab-focus;
+		}
+		&.rcbFocused,
+		&.rcbHovered {
+			tr {
+				&.rcbReadOnly {
+					td.rcbArrowCell {
+						background-position: center center;
+					}
+				}
+			}	
+		}
+		td {
+			padding: 0;
+			&.rcbArrowCell {
+				background: url('/firefly/assets/icons/pencil.png') no-repeat center center transparent;
+				display: block;
+				height: $input-height-base - 2;
+				padding: 0;
+				width: 20px;
+				a {
+					display: block;
+					line-height: inherit;
+					@include size(100%);
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			&.rcbInputCell {
+				background: transparent;
+				height: auto;
+				line-height: inherit;
+				padding: 0;
+				position: relative;
+				width: 100%;
+				input.rcbInput {
+					box-shadow: none;
+					font-family: inherit;
+					height: $input-height-base - 2;
+					line-height: inherit;
+					@include opacity(1);
+					padding: $padding-base-vertical 0 $padding-base-vertical $padding-base-horizontal;
+					&:hover {
+						cursor: pointer;
+					}
+					&.rcbEmptyMessage {
+						color: shade($gray-light, 10%);
+					}
+				}
+				.infieldlabel {
+					left: $padding-base-horizontal - 1; // for the border, I guess
+					position: absolute;
+					top: $padding-base-vertical;
+				}
+			}
+		}
+		tr {
+			&.rcbReadOnly {
+				td.rcbArrowCell {
+					background: url('/firefly/assets/icons/rcb-tree.png') no-repeat center center transparent;
+					width: 18px;
+				}
+			}
+		}	
+	}
+}
+
+div.rcbSlide {
+	.RadComboBoxDropDown {
+		background-color: $white;
+		border: 1px solid $border-color;
+		&[class*="Tree"] {
+			background-color: $input-bg-disabled;
+		}
+		.rcbCheckBox, .rcbCheckAllItemsCheckBox {
+			vertical-align: inherit;
+		}
+	}
+	.rcbScroll {
+		.rcbList {
+			li {
+				&:hover, 
+				&.rcbHovered {
+					background: $input-bg-disabled;
+					cursor: pointer;
+				}
+				&.rcbItem,
+				&.rcbHovered {
+					margin: 0;
+					padding: 2px 6px;
+				}
+			}
+		}
+	}
+}

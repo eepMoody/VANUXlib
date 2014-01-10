@@ -1,0 +1,19 @@
+#vanHeader{
+	@include clearfix;
+	padding: 5px;
+	vertical-align: middle;
+	h1{
+		float: left;
+		line-height: $line-height-px + ($btn-padding-vertical * 2) + 2;
+	}
+	.van-header-buttons{
+		float: right;
+		font-family: $font-family-base;
+		max-width: 50%;
+		input, select, table {
+			display: inline-block;
+			font-family: inherit;
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,184 @@
+abbr[title] {
+	border-bottom: 1px dotted $border-color;
+}
+
+address {
+	font-style: normal;
+	line-height: $line-height-em;
+	margin-bottom: $margin-base;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+blockquote {
+	margin: 0 0 $margin-base;
+}
+
+code, kbd, pre, samp {
+	font-family: $font-family-monospace;
+	font-size: inherit;
+}
+
+dd {
+	margin-left: $margin-base;
+}
+
+dd, dt {
+	line-height: $line-height-em;
+}
+
+dfn {
+	font-style: italic;
+}
+
+dl {
+	margin-bottom: $margin-base;
+	@media (min-width: $grid-float-breakpoint) {
+		&.dl-horizontal {
+			dt {
+				clear: left;				
+				float: left;
+				text-align: right;
+				@include text-overflow();
+				width: ($component-offset-horizontal - 20);
+			}
+			dd {
+				@include clearfix;				
+				margin-left: $component-offset-horizontal;
+			}
+		}
+	}
+}
+
+dt {
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    text-rendering: optimizeLegibility;
+    h1, h2, h3, h4, h5, h6 {
+    	font-size: 100%;
+    }
+}
+
+h1{
+    @include set-heading($font-size-h1);
+    line-height: ($line-height-px * 2) / $font-size-h1 * 1em;
+}
+ 
+h2{
+    @include set-heading($font-size-h2);
+    line-height: ($line-height-px * 2) / $font-size-h2 * 1em;
+}
+ 
+h3{
+    @include set-heading($font-size-h3);
+    line-height: ($line-height-px * 2) / $font-size-h3 * 1em;
+}
+ 
+h4{
+    @include set-heading($font-size-h4);
+    line-height: $line-height-px / $font-size-h4 * 1em;
+}
+ 
+h5{
+    @include set-heading($font-size-h5);
+    line-height: $line-height-px / $font-size-h5 * 1em;
+}
+ 
+h6{
+    @include set-heading($font-size-h6);
+    line-height: $line-height-px / $font-size-h6 * 1em;
+}
+
+i, em{
+	font-style: italic;
+}
+
+mark {
+	background: $gray-lighter;
+	color: $black;
+}
+
+p {
+	font-size: font-percentage($font-size-base);
+	margin: 0 0 $margin-half;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+sub, sup {
+	font-size: font-percentage($font-size-smaller);
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+small { 
+	font-size: font-percentage($font-size-smaller);
+}
+
+ul, ol {
+	margin-bottom: $margin-half;
+	margin-top: 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	ul, ol {
+		margin-bottom: 0;
+	}
+	&.list-inline {
+		@extend .list-unstyled;
+		> li {
+			display: inline-block;
+	  	}
+	  	&.list-inline-divided{
+			> li {
+				&:not(:last-child):after{
+			    	content: "|";
+			    	padding: 0 5px;
+				}
+			}
+	  	}	  	
+	  	&.list-inline-padded{
+			> li {
+				display: inline-block;
+				padding-left: 5px;
+				padding-right: 5px;
+				&:first-child {
+					padding-left: 0;
+				}
+	  		}
+	  	}
+	}
+	&.list-unstyled {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+}
+
+.lead {
+	font-size: font-percentage($font-size-larger);
+}

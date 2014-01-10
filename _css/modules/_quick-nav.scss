@@ -1,0 +1,45 @@
+.QuickNavAutoCompleteWrapper {
+	background: $table-bg-accent;
+	border: 1px solid $border-color;
+	border-top: 0;
+	border-radius: $border-radius-base;
+	border-top-left-radius: 0;
+	box-shadow: 5px 5px 3px -5px rgba(0, 0, 0, .75);
+	height: 235px;
+	margin-left: 11px;
+	padding: 10px;
+	position: fixed;
+	top: 22px;
+	width: 310px;
+	div.RadComboBox {
+		width: 100%;
+		table{
+			@include border-bottom-radius(0);
+			width: 100% !important;
+			&.rcbFocused {
+				background: $white;
+			}
+			td {
+				&.rcbInputCell {
+					input.rcbInput {
+						padding-right: $padding-base-horizontal;
+					}
+				}
+			}
+		}
+	}
+	.QuickNav {
+		@include size(100%);
+	}
+	.QuickNavAutocompleteExplanation {
+		bottom: 10px;
+		display: block;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+	.quicknav-seperator {
+		display: none;
+	}
+}

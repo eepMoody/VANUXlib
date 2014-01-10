@@ -1,0 +1,13 @@
+@function font-percentage($target-font-size-px, $font-size-comparison: $font-size-base){
+    @return percentage($target-font-size-px/$font-size-comparison);
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@function calc-line-height($target-font-size-px){
+    $line-count: ceil($target-font-size-px / $line-height-px);
+    $line-height-multi: ($line-count * $line-height-px);
+    @return #{$line-height-multi / $target-font-size-px}em;
+}

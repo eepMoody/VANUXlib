@@ -1,0 +1,9 @@
+.section-heading{
+	border: 1px solid $white;
+	box-shadow: inset 0 -3px 5px rgba(0, 0, 0, .1);
+	font-family: $heading-font-family;
+	padding: 8px 5px;
+	&.no-border{
+		border:none;
+	}
+}

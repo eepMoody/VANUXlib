@@ -1,0 +1,12 @@
+table {
+	border: 0;
+	border-collapse: collapse;	
+	border-spacing: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	col[class*="col-"] {
+  		float: none;
+  		display: table-column;
+	}
+}

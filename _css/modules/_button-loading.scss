@@ -1,0 +1,13 @@
+.button-loading{
+	@include opacity(.65);
+	position: relative;
+	&:after{
+		content: url(/images/waiting_grey_sm.gif);
+		position: absolute;
+		right: $padding-base-vertical;
+		top: $padding-base-vertical * 2;
+	}
+	button, input[type=submit], input[type=button], input[type=reset]{
+		padding-right: $padding-base-horizontal * 3;
+	}
+}

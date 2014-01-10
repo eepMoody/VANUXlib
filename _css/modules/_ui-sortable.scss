@@ -1,0 +1,41 @@
+.ui-sortable {
+	margin-bottom: $margin-half;
+    li {
+		background-color: #eee;
+		border-radius: $border-radius-base;
+		@include clearfix;
+		cursor: move;
+		margin-bottom: 2px;
+		vertical-align: middle;
+	 	width: auto;
+	 	div[class*="col-"] {
+	 		padding-bottom: 5px;
+	 		padding-top: 5px;
+	 	}
+		.close{
+			color: $gray;
+			cursor: pointer;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			@include transition(all 0.3s ease-in-out);
+			&:hover {
+				color: $text-color;
+			}
+		}
+		.drag-handle {
+			background: url(/Images/reskin/MyListIconDragHandle.png) no-repeat;
+			display: block;
+			margin-top: 3px;
+			@include size(8px 10px);
+		}
+		.select2-container {
+			display: block;
+			margin: -9px 0;
+	 		width: auto;
+	 		.select2-choice {
+				font-weight: normal;
+			}
+	 	}
+	}
+}

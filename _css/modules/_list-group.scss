@@ -1,0 +1,51 @@
+.list-group{
+	background: $white;
+	border: 1px solid $border-color;
+	border-radius: $border-radius-base;
+	list-style: none;
+	padding: 10px;
+	li{
+		border-bottom: 1px solid $border-color-light;
+		padding: 2px 0;
+		.badge{
+			border-radius: 10px;
+			display: inline-block;
+			font-weight: bold;
+			float: right;
+			line-height: 1;		
+			min-width: 10px;
+			padding: 3px 6px;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+			&.new{
+				background-color: $gray-dark;
+				color: $white;
+			}
+		}
+		&.header, &:last-child{
+			border-bottom: none;
+		}
+		&.header{
+			font-family: $heading-font-family;
+			font-size: $font-size-larger;
+			font-weight: 600;
+		}
+	}
+	&.yellow{
+		background: #fff6bf;
+		border-color: #f5db6a;
+		color: #835303;
+		a{
+			color: inherit;
+		}
+		li{
+			border-color: #ffea91;
+			.badge{
+				&.new{
+					background-color: #835303;
+				}
+			}
+		}
+	}
+}

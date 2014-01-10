@@ -1,0 +1,34 @@
+.breadcrumbs{
+	@extend .list-inline;
+	background: url(../Images/reskin/menu-bg.png) repeat-x;
+	border: 1px solid $border-color;
+	border-radius: $border-radius-base;
+	max-width: 66%;
+	li{
+		line-height: 23px;
+		a, span{
+			background: url(../Images/reskin/sprites.png) 0px -93px no-repeat;
+			display: block;
+			padding-left: 15px;
+			padding-right: 5px;
+		}
+		&.home{
+			padding: 0;
+			@include size(26px 23px);
+			a, span{
+				display: block;
+				padding: inherit;
+				@include size(100%);
+				text-indent: -999em;
+			}
+			a{
+				// active, it's a link!
+				background: url(../Images/reskin/sprites.png) -32px -44px no-repeat;
+			}
+			span{
+				// gray that bugger out
+				background: url(../Images/reskin/sprites.png) -3px -44px no-repeat;
+			}
+		}
+	}
+}

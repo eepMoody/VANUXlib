@@ -1,0 +1,313 @@
+button, input {
+	line-height: normal;
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+button, input[type="button"],
+input[type="reset"], input[type="submit"] {
+	@extend .btn;
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled], input[disabled] {
+	cursor: default;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+}
+
+button, select {
+	text-transform: none;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	display: inline-block;
+}
+
+legend {
+	border: 0;
+	border-bottom: 1px solid $legend-border-color;
+	color: $legend-color;
+	display: block;
+	font-size: font-percentage($font-size-base * 1.5);	
+	line-height: inherit;
+	margin-bottom: $margin-base;
+	padding: 0;	
+	width: 100%;
+}
+
+input[type="file"] {
+	display: block;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	line-height: inherit;
+	margin: 0 4px 0 0;
+	padding: 0;
+	position: relative;
+	top: 2px;
+	@include size(13px);
+	& + label {
+		display: inline;
+		margin-right: 5px;
+	}
+}
+
+.radio, .checkbox {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	min-height: $line-height-em;	
+	padding-left: 20px;
+	vertical-align: middle;
+	label {
+		cursor: pointer;		
+		display: inline;
+		font-weight: normal;		
+		margin-bottom: 0;
+	}
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+	float: left;
+	margin-left: -20px;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+	margin-top: -5px;
+}
+
+.radio-inline,
+.checkbox-inline {
+	cursor: pointer;	
+	display: inline-block;
+	font-weight: normal;
+	padding-left: 20px;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+.radio, .radio-inline,
+.checkbox, .checkbox-inline {
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed;
+	}
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	@include box-sizing(border-box);
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+input[type="text"] {
+	&.calendar-icon {
+		background-image: url('/Images/icons/calendar_form.gif');
+		background-position: 95% center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+}
+
+select[multiple], select[size] {
+	height: auto;
+	optgroup {
+		font-size: inherit;
+		font-style: inherit;
+		font-family: inherit;
+	}
+}
+
+select{
+	@extend .form-control;
+	height: $input-height-base;	
+	min-width: 100px;
+	padding: $padding-base-vertical;
+	padding-left: 0;
+}
+
+input[type="text"], input[type="password"], input[type="color"],
+input[type="datetime"], input[type="datetime-local"], input[type="date"]
+input[type="month"], input[type="time"], input[type="week"], input[type="number"]
+input[type="email"], input[type="url"], input[type="search"], input[type="tel"] {
+	@extend .form-control;
+	height: $input-height-base;	
+	padding: $padding-base-vertical $padding-base-horizontal;
+}
+
+textarea{
+	@extend .form-control;
+	height: auto;
+	overflow: auto;
+	padding: $padding-base-vertical $padding-base-horizontal;
+	resize: vertical;
+	vertical-align: top;
+}
+
+.btn{
+	@include linear-gradient($btn-gradient-light, $btn-gradient-dark);
+	border: 1px solid $btn-border-default;
+	border-radius: $border-radius-base;
+	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $line-height-em);
+	color: $text-color;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family-base;
+	font-weight: $btn-font-weight;
+	margin-bottom: 0;
+	text-align: center;
+	@include user-select(none);
+	vertical-align: middle;
+	white-space: nowrap;
+	&:active, &.active {
+		background-image: none;
+		box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+		outline: 0;
+	}
+	&.disabled, &[disabled], fieldset[disabled] & {
+		box-shadow: none;
+		cursor: not-allowed;
+		@include opacity(.65);
+		pointer-events: none;
+		&:hover {
+			border-color: $btn-border-default;
+		}
+	}
+	&:focus {
+		@include tab-focus;
+	}
+	&:hover, &:focus {
+		@include linear-gradient($btn-gradient-dark, $btn-gradient-light);
+		color: $btn-default-color;
+		border-color: $btn-border-hover;
+		text-decoration: none;
+	}
+	&.btn-lg {
+		@include button-size($padding-large-vertical, $padding-large-horizontal, $line-height-larger);
+	}
+	&.btn-sm {
+	 	@include button-size($padding-small-vertical, $padding-small-horizontal, $line-height-smaller);
+	}
+}
+
+.form-control {
+	background-color: $input-bg;
+	border: 1px solid $input-border;
+	border-radius: $input-border-radius;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);	
+	color: $input-color;
+	display: inline-block;
+	font-family: $font-family-base;
+	font-size: font-percentage($font-size-base);
+	line-height: $line-height-em;
+	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+	vertical-align: middle;
+	&:hover{
+		border-color: $input-border-hover;
+	}
+	&:focus {
+		@include tab-focus;
+	}
+	&[disabled], &[readonly], fieldset[disabled] & {
+		cursor: not-allowed;
+		background-color: $input-bg-disabled;
+		@include opacity(0.6);
+		&:hover{
+			border-color: $input-border;
+		}
+	}
+	&.input-sm {
+		@include input-size($input-height-smaller, $font-size-smaller);
+	}
+	&.input-lg {
+		@include input-size($input-height-larger, $font-size-larger);
+	}
+}
+
+.form-control-static {
+	margin-bottom: 0;
+}
+
+
+.form-horizontal {
+	.control-label {
+    	text-align: right;
+    }
+	.control-label, .radio,
+	.checkbox, .radio-inline,
+		.checkbox-inline {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: ($padding-base-vertical + 1);
+	}
+	.form-group {
+		@include make-row();
+	}
+	.form-control-static {
+		padding-top: ($padding-base-vertical + 1);
+	}
+}
+
+.form-inline {
+    .form-group  {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+    .form-control {
+    	display: inline-block;
+    }
+    .radio,
+    .checkbox {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+    }
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] {
+		float: none;
+		margin-left: 0;
+	}
+}
+
+.form-group {
+	margin-bottom: $margin-half;
+}
+
+.help-block {
+	color: tint($text-color, 25%);
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;	
+}

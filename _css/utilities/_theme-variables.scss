@@ -1,0 +1,39 @@
+// Monochrome   ==============================================================
+
+$black: #000;
+$gray-darker: shade(#555, 60%);
+$gray-dark: #272727;
+$gray: #555;
+$gray-light: #cbcbcb;
+$gray-lighter: tint(#555, 90%); // #eeeeee
+$gray-lightest: #f2f2f2;
+$white: #fff;
+
+//  Utility Colors   ==========================================================
+
+$blue: #5bc0de;
+$green: #5cb85c;
+$orange: #f0ad4e; 
+$red: #e25353;
+
+// Default Theme Palette   ===================================================
+
+$theme-primary: #548ab4;
+$theme-dark: #26598c;
+$theme-dark-desat: #334863;
+$theme-success: $green;
+$theme-warning: $orange;
+$theme-danger: $red;
+$theme-info: $blue;
+$theme-section-headings: tint($gray-lightest, 10%);
+$theme-table-header: tint($theme-primary, 66%);
+
+// Gray Theme Palette   ======================================================
+
+$theme-gray-bg: #738aa0;
+
+//  Layout Elements  =========================================================
+
+$body-bg-default: $theme-primary;
+$content-bg: $gray-lightest;
+$quick-nav-bg: $theme-dark-desat;

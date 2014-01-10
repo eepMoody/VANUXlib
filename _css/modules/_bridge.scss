@@ -1,0 +1,9 @@
+.Headline1 {
+	@extend h1;
+}
+
+#CalendarSplitter {
+	* {
+		@include box-sizing(content-box);
+	}
+}

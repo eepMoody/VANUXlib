@@ -1,0 +1,48 @@
+.alert{
+	color: $theme-warning;
+}
+
+.box-shadow{
+	@include box-shadow;
+}
+
+.center-block {
+	@include center-block;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.hide {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.show {
+  display: block !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-shadow{
+	@include text-shadow;
+}

@@ -1,0 +1,51 @@
+@import "../bourbon/bourbon";
+@import "../utilities/_theme-variables";
+@import "../utilities/_variables";
+@import "../utilities/_functions";
+@import '../modules/_ui-sortable';
+
+.vanSubHeader {
+	font-weight: bold;
+	small {
+		display: block;
+		font-weight: normal;
+	}
+}
+
+.wizard-table {
+    background-color: $table-bg;	
+	border: 1px solid $border-color;
+	padding-top: $margin-base;
+	hr {
+		border-color: $border-color-light;
+		margin: $margin-half auto;
+		width: 98%;
+	}
+	img {
+		-ms-interpolation-mode: bicubic;
+	}
+	input[type="text"],
+	textarea {
+		width: 100%;
+	}
+	textarea {
+		min-height: 50px;
+	}
+	.control-label {
+		font-weight: bold;
+		text-align: right;
+	}
+	.Highlight {
+		float: right;
+		margin-right: -10px;
+		margin-top: -20px;
+	}	
+	.radio {
+		label {
+			margin-right: 10px;
+		}
+	}
+	.select2-container {
+		width: 100%;
+	}
+}
