@@ -1,14 +1,14 @@
 <!DOCTYPE html><html lang="en-gb">
 
 <?php
-	$page_title = "Basic Elements";
-	$page_desc = "Common small snippets that haven't been adapted for VAN yet";
+	$page_title = "Basic Form Elements";
+	$page_desc = "Common elements for forms";
 	
 	@include('_includes/header-include.html');
 
 	$files = array();
 	
-	$patterns_dir = "_barebones-patterns";
+	$patterns_dir = "_form-elements";
 	$handle = opendir($patterns_dir);
 	while (false !== ($file = readdir($handle))):
 		if(stristr($file,'.html')):
