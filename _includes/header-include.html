@@ -6,9 +6,35 @@
 
 	<link rel="stylesheet" href="http://demo.main.dev.local/firefly/core.css" type="text/css"/>
 	<style>
-		.pattern {
-			margin-top:2em;
+		#pattern-main-nav ul{
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			margin-left:0px;
+			margin-top:10px;
 		}
+
+		#pattern-main-nav ul li{
+			display: inline;
+			padding: 5px 10px;
+			background: #3355FF;
+			border-right: white 1px solid;
+		}
+
+		#pattern-main-nav ul li:hover, #pattern-main-nav ul li.current{
+			background: #5588FF;
+		}
+
+		#pattern-main-nav ul li a{
+			color: white;
+			font-weight: bold;
+			text-decoration:none;
+		}
+
+		.pattern {
+			margin-top:0em;
+		}
+
 		details.primer {
 			margin-top:2.5em;
 			background-color:#e9e9e9;
@@ -62,7 +88,7 @@
 				</nav><!--/.breadcrumb-nav-->
 				<h1><?php echo $page_title ?></h1>
 				<p class="lede"><?php echo $page_desc ?></p>
-				<div id="main_navigation">
+				<div id="pattern-main-nav">
 					<label for="custom-css">Custom CSS location?</label>
 					<input type="text"></input>
 					<ul>
