@@ -11,7 +11,8 @@
 			margin:0;
 			padding:0;
 			margin-left:0px;
-			margin-top:10px;
+			margin-top:.5em;
+			margin-bottom: 1em;
 		}
 
 		#pattern-main-nav ul li{
@@ -83,30 +84,25 @@
 	<main role="main">
 		<div class="container">
 			<header>
-				<nav role="navigation" class="breadcrumb-nav">
-					<a href="../">NGPVAN UX Pattern Library</a>
-				</nav><!--/.breadcrumb-nav-->
-				<h1><?php echo $page_title ?></h1>
-				<p class="lede"><?php echo $page_desc ?></p>
 				<div id="pattern-main-nav">
-					<label for="custom-css">Custom CSS location?</label>
-					<input type="text"></input>
 					<ul>
-						<li id="basic-patterns">
+						<li id="patterns">
 							<a href="/_patterns.php">Barebones Patterns</a>
 						</li>
-						<li id="style-guide">
+						<li id="form-elements">
 							<a href="/_form-elements.php">Form Elements</a>
 						</li>
-						<li id="example-form">
-							<a href="/_forms.php">Example Form</a>
-						</li>
-						<li id="style-guide">
+						<li id="framework-elements">
 							<a href="/_framework-elements.php">Framework Elements</a>
 						</li>
-						<li id="example-form">
-							<a href="/_styleguide.php">Style Guide</a>
+						<li id="file-structure">
+							<a href="/_file-structure.php">File Structure</a>
 						</li>
 					</ul>
+				<label for="custom-css">Custom CSS location?</label>
+				<input type="text"></input>
+				<input type="button" class="btn" value="remap">
 				</div>
+				<h1><?php echo $page_title ?></h1>
+				<p class="lede"><?php echo $page_desc ?></p>
 			</header>
